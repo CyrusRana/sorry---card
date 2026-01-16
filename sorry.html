@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sorry Swatiii Malkin Jii</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+<style>
+body{margin:0;height:100vh;background:linear-gradient(135deg,#ffd6e8,#e0c3fc);display:flex;justify-content:center;align-items:center;font-family:'Poppins',sans-serif;overflow:hidden;}
+#cover{width:300px;height:200px;background:#ff4d88;border-radius:20px;display:flex;justify-content:center;align-items:center;color:white;font-size:22px;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,0.3);animation:pulse 1.5s infinite;}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
+#card{display:none;text-align:center;background:white;padding:35px 30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);max-width:420px;animation:fadeIn 1s ease;}
+.photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #ff4d88;margin-bottom:15px;}
+h1{font-family:'Pacifico',cursive;color:#ff4d88;font-size:30px;}
+.shayari{background:#fff0f6;padding:15px;border-radius:15px;font-size:16px;line-height:1.6;margin:20px 0;}
+button{background:#ff4d88;color:white;border:none;padding:12px 25px;border-radius:25px;font-size:16px;cursor:pointer;}
+.music-btn{background:#7b4dff;margin-top:10px;}
+.heart{position:absolute;color:#ff4d88;font-size:20px;animation:float 6s linear infinite;opacity:0.7;}
+@keyframes float{0%{transform:translateY(100vh);}100%{transform:translateY(-10vh);opacity:0;}}
+@keyframes fadeIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+</style>
+</head>
+<body>
+<audio id="bgMusic" loop>
+<source src="music.mpeg" type="audio/mpeg">
+</audio>
+
+<div id="cover" onclick="openCard()">Tap to open 💝</div>
+
+<div id="card">
+<img src="swati.jpeg" class="photo">
+<h1>Sorry Swatiii Malkin Jii 💖</h1>
+<div class="shayari">
+थोड़ा सा ज़्यादा सो गया मैं,<br>
+पर दोस्ती मेरी कभी कम नहीं हुई।<br>
+गुस्सा छोड़ दो मेरी मलक़िन जी,<br>
+आपकी मुस्कान से ही मेरी सुबह हुई।
+</div>
+<button onclick="alert('Thank you Swatiii ❤️ Tum best ho!')">Ab to maan jao na 🥺</button><br><br>
+<button class="music-btn" onclick="playMusic()">Play Music 🎵</button>
+</div>
+
+<script>
+function openCard(){
+document.getElementById("cover").style.display="none";
+document.getElementById("card").style.display="block";
+}
+function playMusic(){
+document.getElementById("bgMusic").play();
+}
+function createHeart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+}
+setInterval(createHeart,500);
+</script>
+</body>
+</html>
